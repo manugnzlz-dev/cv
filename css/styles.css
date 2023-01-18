@@ -1,0 +1,57 @@
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* --- > BODY */
+.masthead {
+  height: 50vh;
+  min-height: 500px;
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  margin-top: 57px;
+}
+
+/* --- > FOOTER */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+.fa-facebook {
+  background: #3B5998;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+}
+
+.fa-linkedin {
+  background: #0A66C2;
+}
+
+.fa-whatsapp {
+  background: #25d366;
+}
+
+.fa-google {
+  background: #c71610;
+}
