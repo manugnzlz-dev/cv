@@ -65,7 +65,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#formContacto">Contacto</a>
+                        <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -352,54 +352,65 @@
     <footer id="footer">
 
         <!-- Inicio Formulario de contacto -->
-        <section class="py-5" id="formContacto">
+        <section class="py-5" id="contacto">
             <div class="container">
                 <h3 class="fw-light text-center">Formulario de Contacto</h3>
-
-                <form>
+                <form id="formContacto">
                     <div class="mb-3">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingName" placeholder="Nombre" required>
-                            <label for="floatingName">Nombre</label>
+                        <div class="row justify-content-md-center">
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input id="formName" class="form-control" type="text" placeholder="Nombre" required>
+                                    <label for="formName">Nombre</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="formLastName" placeholder="Apellido"
+                                        required>
+                                    <label for="formLastName">Apellido</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingLastName" placeholder="Apellido"
-                                required>
-                            <label for="floatingLastName">Apellido</label>
+                        <div class="row justify-content-md-center">
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <input id="formEmail" class="form-control" type="email" placeholder="Email"
+                                        required>
+                                    <label for="formEmail">Correo electronico</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingEmail" placeholder="Email" required>
-                            <label for="floatingEmail">Correo electronico</label>
+                        <div class="row justify-content-md-center">
+                            <div class="form-floating mb-3">
+                                <textarea id="formMessage" class="form-control" placeholder="Mensaje"
+                                    required></textarea>
+                                <label for="formMessage">Mensaje</label>
+                            </div>
                         </div>
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Mensaje" id="floatingMessage"
-                                required></textarea>
-                            <label for="floatingMessage">Mensaje</label>
+                        <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button id="btnReset" type="reset" class="btn btn-secondary btn-sm">Limpiar</button>
+                            <button id="btnEnviar" type="submit" class="btn btn-outline-primary">Enviar</button>
                         </div>
-                    </div>
-                    <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button id="btnReset" type="reset" class="btn btn-secondary btn-sm">Limpiar</button>
-                        <button id="btnEnviar" type="submit" class="btn btn-outline-primary">Enviar</button>
                     </div>
                 </form>
             </div>
+            <!-- Inicio copyright & social media -->
+            <div>
+                <div class="container text-center">
+                    <p id="copyright">
+                    </p>
+                </div>
+                <div class="container text-center">
+                    <a href="https://wa.me/543364670302" class="fa fa-whatsapp" target="_blank"></a>
+                    <a href="mailto:jm.gonzalezconosciuto@gmail.com" class="fa fa-google" target="_blank"></a>
+                    <a href="https://www.linkedin.com/in/manugnzlz/" class="fa fa-linkedin" target="_blank"></a>
+                    <a href="https://www.facebook.com/jm.gonzalezconosciuto" class="fa fa-facebook" target="_blank"></a>
+                </div>
+            </div>
+            <!-- Fin copyright & social media -->
         </section>
         <!-- Fin Formulario de contacto -->
-
-        <!-- Inicio copyright & social media -->
-        <section>
-            <div class="container text-center">
-                <p id="copyright">
-                </p>
-            </div>
-            <div class="container text-center">
-                <a href="https://wa.me/543364670302" class="fa fa-whatsapp" target="_blank"></a>
-                <a href="mailto:jm.gonzalezconosciuto@gmail.com" class="fa fa-google" target="_blank"></a>
-                <a href="https://www.linkedin.com/in/manugnzlz/" class="fa fa-linkedin" target="_blank"></a>
-                <a href="https://www.facebook.com/jm.gonzalezconosciuto" class="fa fa-facebook" target="_blank"></a>
-            </div>
-        </section>
-        <!-- Fin copyright & social media -->
 
     </footer>
 
