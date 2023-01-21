@@ -23,7 +23,7 @@ function getCopyright() {
 /* Validar formulario */
 function validarForm(evento) {
 
-  let lv_form_valid;
+  let lv_form_valid = "X";
 
   evento.preventDefault();
 
@@ -32,7 +32,7 @@ function validarForm(evento) {
   if (validarDato(formName.value)) {
     setValid(formName);
   } else {
-    setInvalid(formName);
+    setInvalid(formName, lv_form_valid);
     formName.focus();
     return;
   };
@@ -42,25 +42,26 @@ function validarForm(evento) {
   if (validarDato(formLastName.value)) {
     setValid(formLastName);
   } else {
-    setInvalid(formLastName);
+    setInvalid(formLastName, lv_form_valid);
     formLastName.focus();
     return;
   };
 
   // Validar input Correo electronico
-  let formEmail = document.getElementById('formEmail').value;
+  let formEmail = document.getElementById('formEmail');
   let formEmail_if = document.getElementById("invalid-feedback-formEmail");
   if (validarDato(formEmail.value)) {
     setValid(formEmail);
 
     if (!validarEmail(formEmail.value)) {
+      setInvalid(formEmail, lv_form_valid);
       formEmail_if.innerHTML = "Correo electrónico inválido";
       return;
     };
 
   } else {
     formEmail_if.innerHTML = "Ingresar Correo electrónico";
-    setInvalid(formEmail);
+    setInvalid(formEmail, lv_form_valid);
     formEmail.focus();
     return;
   };
@@ -70,7 +71,7 @@ function validarForm(evento) {
   if (validarDato(formMessage.value)) {
     setValid(formMessage);
   } else {
-    setInvalid(formMessage);
+    setInvalid(formMessage, lv_form_valid);
     formMessage.focus();
     return;
   };
@@ -78,7 +79,7 @@ function validarForm(evento) {
   if (lv_form_valid) {
     this.submit();
     this.reset();
-    mostrarAlerta("Formulario enviado correctamente!");
+    //mostrarAlerta("Formulario enviado correctamente!");
   }
 
 }
@@ -96,7 +97,8 @@ function setValid(elemento) {
   elemento.classList.add('is-valid');
 }
 
-function setInvalid(elemento) {
+function setInvalid(elemento, iv_form_valid) {
+  iv_form_valid = "";
   elemento.classList.add('is-invalid');
   elemento.classList.remove('is-valid');
 }
