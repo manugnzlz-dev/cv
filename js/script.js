@@ -1,54 +1,85 @@
 
-/* window.addEventListener('load', function () {
-  'use strict';
-
-  const e_copyright = document.getElementById("copyright");
-  e_copyright.addEventListener('load', getCopyright());
-
-}); */
-
 document.addEventListener("DOMContentLoaded", function () {
 
   // Cargar copyright
   const e_copyright = document.getElementById("copyright");
   e_copyright.addEventListener('load', getCopyright());
 
-  // Validacion formulario
+  // Validacion formulario en submit
   const e_formContacto = document.getElementById("formContacto");
   e_formContacto.addEventListener('submit', validarForm);
 
-});
+  // Validacion elementos individuales
 
+});
 
 /* Obtener copyright */
 function getCopyright() {
-
   let lv_year = new Date().getFullYear();
   let lv_copyright = "&copy; Copyright " + lv_year + " - MGC Studio Consulting";
   document.getElementById("copyright").innerHTML = lv_copyright;
-
 }
 
 /* Validar formulario */
 function validarForm(evento) {
 
+  let lv_form_valid;
+
   evento.preventDefault();
 
-  var valueNombre = document.getElementById('formName').value;
-  if (!validarDato(valueNombre)) {
-    mostrarAlerta("Falta completar informacion");
+  // Validar input Nombre
+  var formName = document.getElementById('formName');
+  if (validarDato(formName.value)) {
+    setValid(formName);
+  } else {
+    setInvalid(formName);
+    formName.focus();
     return;
   };
 
-  var valueEmail = document.getElementById('formEmail').value;
-  if (!validarEmail(valueEmail)) {
-    mostrarAlerta("Correo electronico inválido");
+  // Validar input Apellido
+  var formLastName = document.getElementById('formLastName');
+  if (validarDato(formLastName.value)) {
+    setValid(formLastName);
+  } else {
+    setInvalid(formLastName);
+    formLastName.focus();
     return;
   };
 
-  this.submit();
-  this.reset();
-  mostrarAlerta("Formulario enviado correctamente!");
+  // Validar input Correo electronico
+  let formEmail = document.getElementById('formEmail').value;
+  let formEmail_if = document.getElementById("invalid-feedback-formEmail");
+  if (validarDato(formEmail.value)) {
+    setValid(formEmail);
+
+    if (!validarEmail(formEmail.value)) {
+      formEmail_if.innerHTML = "Correo electrónico inválido";
+      return;
+    };
+
+  } else {
+    formEmail_if.innerHTML = "Ingresar Correo electrónico";
+    setInvalid(formEmail);
+    formEmail.focus();
+    return;
+  };
+
+  // Validar input Mensaje
+  var formMessage = document.getElementById('formMessage');
+  if (validarDato(formMessage.value)) {
+    setValid(formMessage);
+  } else {
+    setInvalid(formMessage);
+    formMessage.focus();
+    return;
+  };
+
+  if (lv_form_valid) {
+    this.submit();
+    this.reset();
+    mostrarAlerta("Formulario enviado correctamente!");
+  }
 
 }
 
@@ -58,6 +89,16 @@ function validarDato(value) {
   } else {
     return true;
   }
+}
+
+function setValid(elemento) {
+  elemento.classList.remove('is-invalid');
+  elemento.classList.add('is-valid');
+}
+
+function setInvalid(elemento) {
+  elemento.classList.add('is-invalid');
+  elemento.classList.remove('is-valid');
 }
 
 /* Validar Correo electronico */
@@ -73,3 +114,23 @@ function validarEmail(mail) {
 function mostrarAlerta(message) {
   alert(message);
 }
+
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+      }, false)
+    })
+})()

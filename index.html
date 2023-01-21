@@ -355,13 +355,16 @@
         <section class="py-5" id="contacto">
             <div class="container">
                 <h3 class="fw-light text-center">Formulario de Contacto</h3>
-                <form id="formContacto">
+                <form id="formContacto" novalidate>
                     <div class="mb-3">
                         <div class="row justify-content-md-center">
                             <div class="col-md">
                                 <div class="form-floating mb-3">
                                     <input id="formName" class="form-control" type="text" placeholder="Nombre" required>
                                     <label for="formName">Nombre</label>
+                                    <div class="invalid-feedback">
+                                        Ingresar Nombre
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md">
@@ -369,6 +372,9 @@
                                     <input type="text" class="form-control" id="formLastName" placeholder="Apellido"
                                         required>
                                     <label for="formLastName">Apellido</label>
+                                    <div class="invalid-feedback">
+                                        Ingresar Apellido
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -378,14 +384,22 @@
                                     <input id="formEmail" class="form-control" type="email" placeholder="Email"
                                         required>
                                     <label for="formEmail">Correo electronico</label>
+                                    <div id="invalid-feedback-formEmail" class="invalid-feedback">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row justify-content-md-center">
-                            <div class="form-floating mb-3">
-                                <textarea id="formMessage" class="form-control" placeholder="Mensaje"
-                                    required></textarea>
-                                <label for="formMessage">Mensaje</label>
+                            <div class="col-md">
+                                <div class="form-floating mb-3">
+                                    <textarea id="formMessage" class="form-control" placeholder="Mensaje"
+                                        required></textarea>
+                                    <label for="formMessage">Mensaje</label>
+                                    <div class="invalid-feedback">
+                                        Ingresar Mensaje
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
