@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const e_formContacto = document.getElementById("formContacto");
   e_formContacto.addEventListener('submit', validarForm);
 
-  // Validacion elementos individuales
+  // Evento Limpiar del formulario
+  e_formContacto = this.addEventListener('reset', resetForm)
 
 });
 
@@ -79,9 +80,32 @@ function validarForm(evento) {
   if (lv_form_valid) {
     this.submit();
     this.reset();
-    //mostrarAlerta("Formulario enviado correctamente!");
+    setResetForm('.is-valid', 'is-valid');
+    setResetForm('.is-invalid', 'is-invalid');
+
+    var formMessageEnviado = document.getElementById('formMessageEnviado');
+    formMessageEnviado.style.display = 'block';
   }
 
+}
+
+function resetForm() {
+  setResetForm('.is-valid', 'is-valid');
+  setResetForm('.is-invalid', 'is-invalid');
+
+  var formMessageEnviado = document.getElementById('formMessageEnviado');
+  formMessageEnviado.style.display = 'none';
+
+  var formName = document.getElementById('formName');
+  formName.focus();
+}
+
+function setResetForm(classNameGet, classNameRemove) {
+  var elementsForm = document.querySelectorAll(classNameGet);
+  Array.prototype.slice.call(elementsForm)
+    .forEach(function (elementsForm) {
+      elementsForm.classList.remove(classNameRemove);
+    });
 }
 
 function validarDato(value) {
@@ -117,7 +141,7 @@ function mostrarAlerta(message) {
   alert(message);
 }
 
-(function () {
+/* (function () {
   'use strict'
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -135,4 +159,4 @@ function mostrarAlerta(message) {
         form.classList.add('was-validated');
       }, false)
     })
-})()
+})() */

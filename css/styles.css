@@ -55,3 +55,9 @@ img {
 .fa-google {
   background: #c71610;
 }
+
+#formMessageEnviado {
+  color: green;
+  text-align: center;
+  display: none;
+}

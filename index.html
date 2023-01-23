@@ -93,7 +93,7 @@
 
             <!-- Inicio 1ra Columna Principal-->
             <div class="col-lg-4">
-                <section class="py-5" id="miPerfil">
+                <section class="py-3" id="miPerfil">
                     <h2 class="fw-light">Mi Perfil</h2>
                     <div class="container">
                         <p>Actualmente me desempeño en el rol de analista técnico y desarrollador SAP ABAP y de
@@ -130,7 +130,7 @@
             <!-- Inicio 2da Columna Principal-->
             <div class="col-lg-8">
                 <!-- Inicio Experiencia Laboral -->
-                <section class="py-5" id="experienciaLaboral">
+                <section class="py-3" id="experienciaLaboral">
                     <h2 class="fw-light">Experiencia Laboral</h2>
 
                     <!-- Exp.Lab 1 -->
@@ -193,7 +193,7 @@
                 <!-- Fin Experiencia Laboral -->
 
                 <!-- Inicio Formacion Academica -->
-                <section class="py-5" id="formacionAcademica">
+                <section class="py-3" id="formacionAcademica">
                     <div class="container">
                         <h2 class="fw-light">Formacion Académica</h2>
                         <h6 class="fw-light fst-italic text-end">02.2013 — 12.2015</h6>
@@ -206,7 +206,7 @@
                 <!-- Fin Formacion Academica -->
 
                 <!-- Inicio Idiomas -->
-                <section class="py-5" id="idiomas">
+                <section class="py-3" id="idiomas">
                     <div class="container">
                         <h2 class="fw-light">Idiomas</h2>
                         <table class="table">
@@ -226,7 +226,7 @@
                 <!-- Fin Idiomas -->
 
                 <!-- Aptitudes Profesionales -->
-                <section class="py-5" id="aptitudesProfesionales">
+                <section class="py-3" id="aptitudesProfesionales">
                     <div class="container">
                         <h2 class="fw-light">Aptitudes Profesionales</h2>
                         <!-- Accordion -->
@@ -319,7 +319,7 @@
                 </section>
 
                 <!-- Inicio Otros datos de interes -->
-                <section class="py-5" id="otrosDatos">
+                <section class="py-3" id="otrosDatos">
                     <div class="container">
                         <h2 class="fw-light">Otros datos de interes</h2>
                         <table class="table">
@@ -352,9 +352,13 @@
     <footer id="footer">
 
         <!-- Inicio Formulario de contacto -->
-        <section class="py-5" id="contacto">
+        <section class="py-3" id="contacto">
             <div class="container">
-                <h3 class="fw-light text-center">Formulario de Contacto</h3>
+                <h3 id="titleForm"class="fw-light text-center">Formulario de Contacto</h3>
+                <div id="formMessageEnviado" class="alert alert-success alert-dismissible" role="alert">
+                    Mensaje enviado correctamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                </div>
                 <form id="formContacto" novalidate>
                     <div class="mb-3">
                         <div class="row justify-content-md-center">
@@ -385,7 +389,7 @@
                                         required>
                                     <label for="formEmail">Correo electronico</label>
                                     <div id="invalid-feedback-formEmail" class="invalid-feedback">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -405,6 +409,7 @@
                         <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
                             <button id="btnReset" type="reset" class="btn btn-secondary btn-sm">Limpiar</button>
                             <button id="btnEnviar" type="submit" class="btn btn-outline-primary">Enviar</button>
+                            <!-- <p id="formMessageEnviado"></p> -->
                         </div>
                     </div>
                 </form>
